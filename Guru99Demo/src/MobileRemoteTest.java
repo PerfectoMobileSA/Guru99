@@ -1,4 +1,5 @@
 import guru.demo.pom.Guru99Bank;
+import guru.demo.pom.Guru99Manager;
 
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
@@ -34,10 +35,10 @@ public class MobileRemoteTest {
 		System.out.println("Run started");
 		String browserName = "mobileOS";
 		DesiredCapabilities capabilities = new DesiredCapabilities(browserName, "", Platform.ANY);
-		String host = "mobilecloud.perfectomobile.com";		
+		String host = "demo.perfectomobile.com";		
 		capabilities.setCapability("user", "avnerg@perfectomobile.com");
-		capabilities.setCapability("password", "XXXXXXXX");
-		capabilities.setCapability("deviceName", "3024FBEC0DF899F9E9CA0029D5CBF463830A9979");
+		capabilities.setCapability("password", "scvuanbsh2@");
+		capabilities.setCapability("deviceName", "3133BB296C46FA2250362A227BA462A56ED11A45");
 		
 		// Use the automationName capability to define the required framework - Appium (this is the default) or PerfectoMobile.
 		// capabilities.setCapability("automationName", "PerfectoMobile");
@@ -50,7 +51,8 @@ public class MobileRemoteTest {
 		try {
 			// write your code here
 			Guru99Bank view = new Guru99Bank(driver);
-			view.init().setUser("mngr26136").setPassword("AqyhYpU").login();
+			Guru99Manager mgrView = view.init().setUser("mngr28168").setPassword("YnamenA").login();
+			mgrView.clickNewCustomerButton();
 			
 		} catch (Exception e) {
 			e.printStackTrace();

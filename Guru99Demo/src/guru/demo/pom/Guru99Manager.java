@@ -8,8 +8,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
  * @author avner
  *
  */
-public class Guru99Manager {
-	private RemoteWebDriver driver = null;
+public class Guru99Manager extends Guru99BaseView{
 	private String title = "Guru99 Bank Manager HomePage";
 	
 	/**
@@ -18,7 +17,7 @@ public class Guru99Manager {
 	 * @param driver
 	 */
 	public Guru99Manager(RemoteWebDriver driver){
-		this.driver = driver;
+		super(driver);
 		String title = driver.getTitle();
 		if(!this.title.equals(title)){
 			throw new IllegalStateException("Page title: '" + title + "' is not as expected" );
